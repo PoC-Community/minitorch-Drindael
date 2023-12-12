@@ -332,6 +332,7 @@ def test_tensor_class(TensorType):
 
     c3.backward()
     assert (b.grad != None), "Invalid grad for div backward"
+    print(b.grad.data, -a.data / np.power(b.data, 2))
     assert (b.grad.data == -a.data / np.power(b.data, 2)).all(), "Invalid div backward"
 
     b.grad = None
